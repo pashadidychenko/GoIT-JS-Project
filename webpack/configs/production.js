@@ -38,16 +38,19 @@ module.exports = env => ({
     ],
   },
   plugins: [
+    // new HtmlWebpackPlugin({
+    //   template: './index.html',
+    //   minify: {
+    //     collapseWhitespace: true,
+    //     removeComments: true,
+    //     removeRedundantAttributes: true,
+    //     removeScriptTypeAttributes: true,
+    //     removeStyleLinkTypeAttributes: true,
+    //     useShortDoctype: true,
+    //   },
+    // }),
     new HtmlWebpackPlugin({
-      template: './index.html',
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true,
-      },
+      template: '!!html-loader?interpolate!src/index.html',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
