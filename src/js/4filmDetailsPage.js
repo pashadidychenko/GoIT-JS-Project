@@ -1,0 +1,1 @@
+console.log('Film detail');
