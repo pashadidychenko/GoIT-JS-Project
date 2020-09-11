@@ -1,0 +1,96 @@
+%text_logo {
+    font-family: $primary-font;
+    font-size: 14px;
+    font-weight: 500;
+    color: $text_logo;
+}
+%nav_element_active {
+    font-family: $primary-font;
+    font-size: 14px;
+    font-weight: 500;
+    color: $main_dark_text
+}
+%nav_element_unActive {
+    font-family: $primary-font;
+    font-size: 14px;
+    font-weight: 500;
+    color: $nav_unActive_link
+}
+%search_placeholder_text {
+    font-family: $primary-font;
+    font-size: 16px;
+    font-weight: 400;
+    color: $total_dark
+}
+%search_placeholder_after {
+    background-color: $placeholder_after_line
+}
+%main_page_movie_title {
+    font-family: $primary-font;
+    font-size: 19px;
+    font-weight: 500;
+    color: $total_white
+}
+%main_page_movie_rate {
+    font-family: $primary-font;
+    font-size: 20px;
+    font-weight: 500;
+    color: $total_dark
+}
+%personal_page_watched {
+    font-family: $primary-font;
+    font-size: 16px;
+    font-weight: 400;
+    color: $total_dark
+}
+%personal_page_queue {
+    font-family: $primary-font;
+    font-size: 16px;
+    font-weight: 400;
+    color: $total_white
+}
+%pagination_button {
+    font-family: $secondary-font;
+    font-size: 17px;
+    font-weight: 700;
+    color: $pagination_buttons_text
+}
+%details_page_movie_title {
+    font-family: $primary-font;
+    font-size: 16px;
+    font-weight: 500;
+    color: $main_dark_text
+}
+%details_page_specifications {
+    font-family: $primary-font;
+    font-size: 13px;
+    font-weight: 400;
+    color: $details_specifications
+}
+%details_page_specifications:nth-child(even) {
+    background-color: $details_specifications_bgc
+}
+%details_page_about {
+    font-family: $primary-font;
+    font-size: 16px;
+    font-weight: 500;
+    color: $main_dark_text
+}
+%details_page_description {
+    font-family: $primary-font;
+    font-size: 14px;
+    font-weight: 400;
+    color: $details_description
+}
+%details_page_add_button {
+    font-family: $primary-font;
+    font-size: 14px;
+    font-weight: 400;
+    color: $main_dark_text
+}
+%footer {
+    font-family: $primary-font;
+    font-size: 16px;
+    font-weight: 400;
+    color: $main_dark_text
+}
