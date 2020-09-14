@@ -50,3 +50,5 @@ function createCardFunc({ backdrop_path, title, id }) {
 
 console.log('renderFilms', renderFilms);
 console.log('genres', genres);
+
+export {renderPopularMovies}
