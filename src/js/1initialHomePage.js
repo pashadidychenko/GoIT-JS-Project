@@ -2,7 +2,7 @@
 import { getMoviesData, genres } from './serviceApi';
 
 const renderFilms = [];
-let pageNumber = 5;
+let pageNumber = 1;
 
 const fragment = document.createDocumentFragment();
 
@@ -34,7 +34,7 @@ function createCardFunc({ backdrop_path, title, id }) {
   img.className = 'card__img';
   let imgSrc;
   if (backdrop_path === null) {
-    imgSrc = `https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSJFI-u51kMLaVTPb_rwIQLsQyGLzUW7sgIyg&usqp=CAU`;
+    imgSrc = 'https://image.freepik.com/free-vector/404_175838-592.jpg';
   } else {
     imgSrc = `https://image.tmdb.org/t/p/w500/${backdrop_path}`;
   }
