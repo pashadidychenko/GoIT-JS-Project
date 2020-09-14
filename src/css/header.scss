@@ -1,3 +1,73 @@
-.header__title--color {
-    color: red
+#header {
+    display: flex;
+    flex-direction: column;
+
+}
+.header_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    background-color: #77c1bb;
+}
+.submenu_form {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    
+}
+.submenu_form input {
+    outline: 0px solid black;
+    border: 0px;
+    border-bottom: 1px solid black;
+    padding: 5px 0px
+}
+.submenu_form input::placeholder {
+    color: #999;
+    text-align: center;
+}
+.logo, .text_logo, .home, .my_library{
+    cursor: pointer;
+}
+.left_side {
+    display: flex;
+    margin-left: 4%;
+}
+.logo {
+    width: 22px;
+    height: 19px;
+    background-image: url('../images/logo.png');
+}
+.text_logo{
+    padding-left: 10px;
+}
+.right_side {
+    display: flex;
+    margin-right: 4%;
+}
+.my_library {
+    padding-left: 20px;
+}
+.under_line::after {
+    display: table;
+    width: 100%;
+    height: 2px;
+    content: '';
+    background-color: #000;
+    margin-top: 5px;
+}
+.submenu_wrapper {
+    display: flex;
+}
+.watched, .queue {
+    box-sizing: border-box;
+    border-bottom: 1px solid;
+    width: 100px;
+    text-align: center;
+    padding: 5px 0px;
+    cursor: pointer;
+}
+.active_submenu_item {
+    background-color: #77c1bb;
+    color: #fff;
 }
