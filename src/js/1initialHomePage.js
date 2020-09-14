@@ -32,7 +32,12 @@ function createCardFunc({ backdrop_path, title, id }) {
 
   const img = document.createElement('img');
   img.className = 'card__img';
-  let imgSrc = `https://image.tmdb.org/t/p/w500/${backdrop_path}`;
+  let imgSrc;
+  if (backdrop_path === null) {
+    imgSrc = 'https://image.freepik.com/free-vector/404_175838-592.jpg';
+  } else {
+    imgSrc = `https://image.tmdb.org/t/p/w500/${backdrop_path}`;
+  }
 
   img.setAttribute('src', imgSrc);
   img.setAttribute('alt', title);
