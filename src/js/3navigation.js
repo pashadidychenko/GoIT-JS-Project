@@ -1,15 +1,12 @@
 import {renderPopularMovies} from './1initialHomePage'
 
-const submenuForm = document.querySelector('.submenu_form')
 const homeButton = document.querySelector('.home')
 const myLibButton = document.querySelector('.my_library')
-const watchedButton = document.querySelector('.watched')
-const queueButton = document.querySelector('.queue')
-
 
 function activeHomePage() {
     renderPopularMovies()
     myLibButton.classList.remove('under_line')
+    homeButton.classList.add('under_line')
     console.log('home')
     submenuForm.innerHTML = ''
     submenuForm.insertAdjacentHTML("beforeend", `
@@ -31,17 +28,6 @@ function activeLibraryPage() {
             <div class="queue">Queue</div>
         </div>
     `)
-}
-function activeWatchedMovies() {
-    queueButton.classList.remove('active_submenu_item')
-    watchedButton.classList.add('active_submenu_item')
-    console.log('watched')
-}
-
-function activeQueueMovies() {
-    watchedButton.classList.remove('active_submenu_item')
-    queueButton.classList.add('active_submenu_item')
-    console.log('queue')
 }
 
 homeButton.addEventListener('click', () => activeHomePage())
