@@ -1,5 +1,6 @@
 'use strict';
 import { getMoviesData, genres } from './serviceApi';
+import { activeDetailsPage } from './4filmDetailsPage';
 
 const renderFilms = [];
 let pageNumber = 1;
@@ -8,7 +9,6 @@ const fragment = document.createDocumentFragment();
 
 function renderPopularMovies() {
   const list = document.querySelector('#films-gallery');
-
   getMoviesData(null, null, pageNumber).then(films => {
     films.map(film => {
       renderFilms.push(film);
@@ -50,3 +50,5 @@ function createCardFunc({ backdrop_path, title, id }) {
 
 console.log('renderFilms', renderFilms);
 console.log('genres', genres);
+
+export { renderFilms, pageNumber, createCardFunc };
