@@ -1,19 +1,18 @@
 <form class="search-form" action="" method="get">
   <input
-    name="s"
-    placeholder="🔍 Write movie name and click Enter"
+    placeholder=" ⌕ Write movie and click Enter"
     type="search"
-    id="search-form"
+    id="search-input"
   />
 </form>
+<p id='error-message'>Write movie`s name to search</p>
 
 <div>
   <ul class="cards__container" id="films-gallery"></ul>
 </div>
 
-<!-- <input class="loadMoreBtn" type="button" value="Load More......" /> -->
-<div class="button_container">
-  <button type="button" class="pagination_button" id="prevBtn">Prev</button>
-  <button type="button" data-action="Load-more" class="pagination_button">Load more</button>
-  <button type="button" class="pagination_button" id="nextBtn">Next</button>
+<div class="button_container" id="button-container">
+  <button type="button" class="pagination_button" id="button-control-prev">Prev</button>
+  <div id=page-counter class="pagination_button"></div>
+  <button type="button" class="pagination_button" id="button-control-next">Next</button>
 </div>

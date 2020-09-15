@@ -1,12 +1,12 @@
 .search-form {
 display: flex;
 justify-content: center;
-width: 350px;
+width: 256px;
 margin: 0 auto;
 padding-top: 10px;
 }
 
-#search-form {
+#search-input {
 border: none;
 outline: none;
 width: 100%;
@@ -14,15 +14,21 @@ height: 42px;
 background: #f7f7f7;
 padding-left: 15px;
 margin-bottom: 15px;
-border-radius: 3px;
+border-radius: 10px;
 box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 /* filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.842)); */
 }
+#error-message {
+  color:red;
+  font-weight: bold;
+  text-align: center;
 
-.text {
-    color:red;
-    font-weight: bold;
 }
+
+// .text {
+//     color:red;
+//     font-weight: bold;
+// }
 .cards__container {
   flex-wrap: wrap;
   display: flex;
