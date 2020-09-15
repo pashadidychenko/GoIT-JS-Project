@@ -50,5 +50,5 @@ function createCardFunc({ backdrop_path, title, id }) {
 
 console.log('renderFilms', renderFilms);
 console.log('genres', genres);
-
-export { renderFilms, pageNumber, createCardFunc };
+filmList.hidden = true;
+export { renderFilms, pageNumber, createCardFunc, renderPopularMovies };
