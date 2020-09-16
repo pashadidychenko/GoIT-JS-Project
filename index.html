@@ -4,18 +4,133 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="team" content="GoIt_29_First_Team" />
+    <meta name="autor" content="Pasha Didychenko" />
+    <meta name="autor" content="Maksym Varfolomieiev" />
+    <meta name="autor" content="Dmitriy Besedin" />
+    <meta name="autor" content="Vassiliy Smith" />
+    <meta name="autor" content="Peter Ermak" />
+    <meta name="autor" content="Nataliia" />
+    <meta name="autor" content="Pavel" />
     <title>goit-js-project</title>
-  <link href="main.0.b8f0bca2c110844f9070.css" rel="stylesheet"></head>
+  <link href="main.0.bb6e2d6242d4851c6264.css" rel="stylesheet"></head>
 
   <body>
-    <h1>goit-js-project</h1>
-    <h3 class="header__title--color">Header page</h3>
- <h4 class="home__title--color">Home page</h4>
+    <div id="header">
+  <div class="header_wrapper">
+    <div class="left_side">
+      <div class="logo"></div>
+      <div class="text_logo">Filmoteka</div>
+    </div>
+    <div class="right_side">
+      <div class="home under_line">HOME</div>
+      <div class="my_library">MY LIBRARY</div>
+    </div>
+  </div>
+</div>
+ <div id="homePage">
+  <div id="inputForm">
+    <form class="search-form" action="" method="get" onsubmit="return false">
+      <input
+        placeholder=" ⌕ Write movie and click Enter"
+        type="search"
+        id="search-input"
+      />
+    </form>
+    <p id="error-message">Write movie`s name to search</p>
+  </div>
 
-    <h4 class="detailPage__title--color">Details page</h4>
+  <div id="filmList">
+    <ul class="cards__container" id="films-gallery"></ul>
+  </div>
 
-    <h4 class="library__title--color">Library page</h4>
- <h3 class="footer__title--color">Footer page</h3>
+  <div id="buttonContainerGroup">
+    <div id="button-container" class="button_container">
+      <button
+        name="Prev"
+        type="button"
+        class="pagination_button"
+        id="button-control-prev"
+      >
+        Prev
+      </button>
+      <div id="page-counter" class="pagination_button"></div>
+      <button
+        name="Next"
+        type="button"
+        class="pagination_button"
+        id="button-control-next"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</div>
 
-  <script type="text/javascript" src="runtime.1ee16c2201d417984a0f.js"></script><script type="text/javascript" src="main.39aa4bd4acd05c26377f.js"></script></body>
+    <div id="detailFilm" class="detailFilm">
+  <img
+    src="https://image.freepik.com/free-vector/404_175838-592.jpg"
+    alt="filmImage"
+    id="detailFilmImage"
+    class="detailFilmImage"
+  />
+  <div class="details_info_wrapper">
+    <h3 id="detailFilmTitle">loading...</h3>
+    <table>
+      <tr>
+        <td>vote / votes</td>
+        <td id="vote">loading...</td>
+      </tr>
+      <tr>
+        <td>popularity</td>
+        <td id="popularity">loading...</td>
+      </tr>
+      <tr>
+        <td>original title</td>
+        <td id="originalTitle">loading...</td>
+      </tr>
+      <tr>
+        <td>genre</td>
+        <td id="gender">loading...</td>
+      </tr>
+    </table>
+    <h3>About</h3>
+    <p id="aboutFilmText">loading...</p>
+    <div id="libraryButton">
+      <button id="watched">Add to watched</button>
+      <button id="queue">Add to queue</button>
+    </div>
+  </div>
+</div>
+
+    <div id="libraryBox" class="libraryBox">
+  <nav class="libnav">
+    <div class="libnav__list">
+      <button
+        type="button"
+        id="watched-button"
+        data-action="watched-button"
+        class="libnav__button"
+      >
+        Watched
+      </button>
+      <button
+        type="button"
+        id="queue-button"
+        data-action="queue-button"
+        class="libnav__button"
+      >
+        Queue
+      </button>
+    </div>
+  </nav>
+  <ul id="mylib-home" class="home__list"></ul>
+  <ul id="mylib-home" class="home__list"></ul>
+</div>
+ <div class="footer">
+    <div class="footer_copyright">
+        <h4>2020(c)</h4>
+    </div>
+</div>
+  <script type="text/javascript" src="runtime.1ee16c2201d417984a0f.js"></script><script type="text/javascript" src="vendors.58de52c04faf51e42834.js"></script><script type="text/javascript" src="main.6057e6c0ecff20b7b351.js"></script></body>
 </html>
