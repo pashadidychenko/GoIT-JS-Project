@@ -19,26 +19,23 @@ const errorMessage = document.getElementById('error-message');
 const pageCounter = document.getElementById('page-counter');
 const buttonSection = document.getElementById('button-container');
 
-// Hide element
 errorMessage.classList.add('hide');
 searchForm.addEventListener('submit', pressEnter);
 searchInput.addEventListener('input', getSearchText);
 buttonSection.addEventListener('click', plaginationNavigation);
 
-// add DOM element
 function addHtml(fragmentHtml, rootHtml) {
   fragment.append(fragmentHtml);
   rootHtml.innerHTML = '';
   rootHtml.append(fragment);
 }
+
 addHtml(pageNumber, pageCounter);
 
-// Get input value
 function getSearchText(text) {
   inputVaue = text.target.value;
 }
 
-// Start search
 function pressEnter(e) {
   e.preventDefault();
   chengePage('reset');
@@ -47,18 +44,23 @@ function pressEnter(e) {
   searchForm.reset();
 }
 
-// Search movies
 function searchFilms(inputVaue, pageNumber) {
   errorMessage.classList.add('hide');
   getMoviesData(null, inputVaue, pageNumber).then(films => {
     if (films.length < 20) {
       buttonNext.classList.add('hide');
     }
+    if (pageNumber === 1) {
+      buttonPrev.classList.add('hide');
+    }
     if (films.length === 0) {
       errorMessage.classList.remove('hide');
       buttonNext.classList.add('hide');
-      buttonPrev.classList.add('hide');
+      buttonPrev.classList.remove('hide');
       onNavigete('/search?error');
+    }
+    if (films.length > 20) {
+      buttonNext.classList.remove('hide');
     }
     films.map(film => {
       renderFilms.push(film);
@@ -73,10 +75,12 @@ function searchFilms(inputVaue, pageNumber) {
   onNavigete(`/search?${inputVaue}/page=${pageNumber}`);
 }
 
-// Pagination
 function plaginationNavigation(e) {
   if (e.target === e.currentTarget) {
     return;
+  }
+  if (pageNumber === 1) {
+    buttonPrev.classList.add('hide');
   }
   if (e.target.name === 'Next') {
     buttonPrev.classList.remove('hide');

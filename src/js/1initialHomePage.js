@@ -1,24 +1,22 @@
 'use strict';
-import { getMoviesData } from './serviceApi';
+import { getMoviesData, genres } from './serviceApi';
 import { activeDetailsPage } from './4filmDetailsPage';
 
-const renderFilms = [];
-let pageNumber = 1;
-const detailFilm = document.getElementById('detailFilm');
-const libraryBox = document.getElementById('libraryBox');
-const fragment = document.createDocumentFragment();
-
-// Routes
 const onNavigete = pathname => {
   window.history.pushState({}, pathname, window.location.origin + pathname);
 };
+const renderFilms = [];
+let pageNumber = 1;
+
 onNavigete(`/`);
 
-// Hide element
+const detailFilm = document.getElementById('detailFilm');
+const libraryBox = document.getElementById('libraryBox');
+
 detailFilm.classList.add('hide');
 libraryBox.classList.add('hide');
 
-// Find Popular Movies
+const fragment = document.createDocumentFragment();
 function renderPopularMovies(pageNumber) {
   const list = document.querySelector('#films-gallery');
   getMoviesData(null, null, pageNumber).then(films => {
@@ -33,8 +31,6 @@ function renderPopularMovies(pageNumber) {
   onNavigete(`/page=${pageNumber}`);
 }
 renderPopularMovies(pageNumber);
-
-// Great movies list
 function createCardFunc({
   backdrop_path,
   title,
@@ -61,15 +57,16 @@ function createCardFunc({
   } else {
     imgSrc = `https://image.tmdb.org/t/p/w500/${backdrop_path}`;
   }
+
   img.setAttribute('src', imgSrc);
   img.setAttribute('alt', title);
+
   li.append(divTitle, img, voteRate);
   a.append(li);
   list.append(a);
   return a;
 }
 
-// Pagination
 function chengePage(sign) {
   if (sign === 'reset') {
     pageNumber = 1;

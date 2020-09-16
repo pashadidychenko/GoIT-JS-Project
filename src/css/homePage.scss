@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');  
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 .search-form {
   display: flex;
   justify-content: center;
@@ -9,16 +9,15 @@
 
 #search-input {
   color: black;
-  border: none;
-  outline: none;
   width: 100%;
-  height: 42px;
+  height: 39px;
   background: #f7f7f7;
   padding-left: 15px;
-  margin-bottom: 15px;
-  border-radius: 10px;
+  margin-bottom: 0px;
+  margin-top: 6px;
+  border-radius: 24px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  /* filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.842)); */
+  outline: none;
 }
 #error-message {
   color: red;
@@ -62,7 +61,7 @@
   height: 100%;
   position: absolute;
   top: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0) 30%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 30%);
   border-radius: 12px;
 }
 .card__title {
@@ -70,13 +69,13 @@
   left: 8px;
   position: absolute;
   color: white;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-weight: 400;
   font-size: 16px;
-  z-index: 10
+  z-index: 10;
 }
 .vote_rating {
-  opacity: .8;
+  opacity: 0.8;
   padding: 5px;
   border-radius: 6px;
   margin: 5px;
@@ -89,18 +88,31 @@
 .button_container {
   display: flex;
   justify-content: center;
+  margin: -10px 0px 10px;
 }
 .pagination_button {
-  margin: 0 5px;
+  margin: 0px 5px 15px;
   padding: 5px 15px;
-  background: linear-gradient(#f7f7f7, rgb(192, 192, 192));
-  border: 1px solid #eee;
-  // outline: 1px solid black;
-  border-radius: 5px;
+  background: linear-gradient(#f7f7f7, silver);
+  border: 2px solid #77c1bb;
+  border-radius: 24px;
+  height: 34px;
+  background: #77c1bb;
+  border-radius: 24px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  outline: none;
+  font-size: 18px;
+  text-transform: uppercase;
 }
-.pagination_button:focus {
-  border: 0;
-  outline: 0;
+#page-counter {
+  background-color: #eee;
+  padding-top: 5px;
+  font-size: 18px;
+  border-radius: 0px;
+}
+.pagination_button:hover {
+  background-color: #33ada3;
+  border-color: #33ada3;
 }
 
 @media screen and (min-width: 768px) {
