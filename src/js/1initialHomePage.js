@@ -2,12 +2,22 @@
 import { getMoviesData, genres } from './serviceApi';
 import { activeDetailsPage } from './4filmDetailsPage';
 
+const onNavigete = pathname => {
+  window.history.pushState({}, pathname, window.location.origin + pathname);
+};
 const renderFilms = [];
 let pageNumber = 1;
 
-const fragment = document.createDocumentFragment();
+onNavigete(`/`);
 
-function renderPopularMovies() {
+const detailFilm = document.getElementById('detailFilm');
+const libraryBox = document.getElementById('libraryBox');
+
+detailFilm.classList.add('hide');
+libraryBox.classList.add('hide');
+
+const fragment = document.createDocumentFragment();
+function renderPopularMovies(pageNumber) {
   const list = document.querySelector('#films-gallery');
   getMoviesData(null, null, pageNumber).then(films => {
     films.map(film => {
@@ -18,8 +28,9 @@ function renderPopularMovies() {
     list.innerHTML = '';
     list.append(fragment);
   });
+  onNavigete(`/page=${pageNumber}`);
 }
-renderPopularMovies();
+renderPopularMovies(pageNumber);
 function createCardFunc({ backdrop_path, title, id }) {
   const list = document.querySelector('#films-gallery');
   const a = document.createElement('a');
@@ -48,7 +59,24 @@ function createCardFunc({ backdrop_path, title, id }) {
   return a;
 }
 
-console.log('renderFilms', renderFilms);
-console.log('genres', genres);
-filmList.hidden = true;
-export { renderFilms, pageNumber, createCardFunc, renderPopularMovies };
+function chengePage(sign) {
+  if (sign === 'reset') {
+    pageNumber = 1;
+  }
+  if (sign === 'add') {
+    pageNumber = pageNumber + 1;
+  }
+  if (sign === 'remove') {
+    pageNumber = pageNumber - 1;
+  }
+}
+
+export {
+  renderFilms,
+  pageNumber,
+  createCardFunc,
+  renderPopularMovies,
+  fragment,
+  chengePage,
+  onNavigete,
+};

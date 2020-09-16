@@ -1,1 +1,38 @@
-<div id="filmList"><ul class="cards__container" id="films-gallery"></ul></div>
+<div id="homePage">
+  <div id="inputForm">
+    <form class="search-form" action="" method="get" onsubmit="return false">
+      <input
+        placeholder=" ⌕ Write movie and click Enter"
+        type="search"
+        id="search-input"
+      />
+    </form>
+    <p id="error-message">Write movie`s name to search</p>
+  </div>
+
+  <div id="filmList">
+    <ul class="cards__container" id="films-gallery"></ul>
+  </div>
+
+  <div id="buttonContainerGroup">
+    <div id="button-container" class="button_container">
+      <button
+        name="Prev"
+        type="button"
+        class="pagination_button"
+        id="button-control-prev"
+      >
+        Prev
+      </button>
+      <div id="page-counter" class="pagination_button"></div>
+      <button
+        name="Next"
+        type="button"
+        class="pagination_button"
+        id="button-control-next"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</div>
