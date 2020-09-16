@@ -19,6 +19,7 @@ const deteilLink = {
   filmListLybrary: document.getElementById('filmListLybrary'),
   libraryBox: document.getElementById('libraryBox'),
 };
+
 const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 const fragment = document.createDocumentFragment();
 let filmId = null;
@@ -31,8 +32,7 @@ function addHtmlData(fragmentHtml, rootHtml) {
   rootHtml.append(fragment);
 }
 
-console.log(window.history);
-
+// Detail page
 function activeDetailsPage(id) {
   filmId = id;
   monitorButtonStatusText();
@@ -63,8 +63,8 @@ function activeDetailsPage(id) {
     addHtmlData(detailFilmData.overview, deteilLink.aboutFilmText);
   });
 }
-export { activeDetailsPage };
 
+// Button status
 function monitorButtonStatusText() {
   const addFilmWatched = 'Add to watched';
   const addFilmQueue = 'Add to queue';
@@ -84,6 +84,7 @@ function monitorButtonStatusText() {
   }
 }
 
+// add/remove to Queue
 function toggleToQueue() {
   let filmsQueue = JSON.parse(localStorage.getItem('filmsQueue'));
   if (filmsQueue === null) {
@@ -100,6 +101,7 @@ function toggleToQueue() {
   monitorButtonStatusText();
 }
 
+// add/remove to Watched
 function toggleToWatched() {
   let filmsWatched = JSON.parse(localStorage.getItem('filmsWatched'));
   if (filmsWatched === null) {
@@ -116,4 +118,4 @@ function toggleToWatched() {
   monitorButtonStatusText();
 }
 
-function showDetails() {}
+export { activeDetailsPage };

@@ -9,6 +9,11 @@ const libraryBox = document.getElementById('libraryBox');
 const leftSide = document.querySelector('.left_side');
 const filmListLybrary = document.getElementById('filmListLybrary');
 
+logoButton.addEventListener('click', activeHomePage);
+homeButton.addEventListener('click', activeHomePage);
+myLibButton.addEventListener('click', activeLibraryPage);
+leftSide.addEventListener('click', activeHomePage);
+
 function activeHomePage() {
   filmListLybrary.classList.add('hide');
   detailFilm.classList.add('hide');
@@ -29,8 +34,3 @@ function activeLibraryPage() {
   libraryBox.classList.remove('hide');
   onNavigete('/myLibrary/');
 }
-
-logoButton.addEventListener('click', activeHomePage);
-homeButton.addEventListener('click', activeHomePage);
-myLibButton.addEventListener('click', activeLibraryPage);
-leftSide.addEventListener('click', activeHomePage);

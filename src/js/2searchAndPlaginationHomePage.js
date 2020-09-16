@@ -19,23 +19,26 @@ const errorMessage = document.getElementById('error-message');
 const pageCounter = document.getElementById('page-counter');
 const buttonSection = document.getElementById('button-container');
 
+// Hide element
 errorMessage.classList.add('hide');
 searchForm.addEventListener('submit', pressEnter);
 searchInput.addEventListener('input', getSearchText);
 buttonSection.addEventListener('click', plaginationNavigation);
 
+// add DOM element
 function addHtml(fragmentHtml, rootHtml) {
   fragment.append(fragmentHtml);
   rootHtml.innerHTML = '';
   rootHtml.append(fragment);
 }
-
 addHtml(pageNumber, pageCounter);
 
+// Get input value
 function getSearchText(text) {
   inputVaue = text.target.value;
 }
 
+// Start search
 function pressEnter(e) {
   e.preventDefault();
   chengePage('reset');
@@ -44,6 +47,7 @@ function pressEnter(e) {
   searchForm.reset();
 }
 
+// Search movies
 function searchFilms(inputVaue, pageNumber) {
   errorMessage.classList.add('hide');
   getMoviesData(null, inputVaue, pageNumber).then(films => {
@@ -69,6 +73,7 @@ function searchFilms(inputVaue, pageNumber) {
   onNavigete(`/search?${inputVaue}/page=${pageNumber}`);
 }
 
+// Pagination
 function plaginationNavigation(e) {
   if (e.target === e.currentTarget) {
     return;
