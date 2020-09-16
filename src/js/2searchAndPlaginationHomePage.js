@@ -54,13 +54,21 @@ function searchFilms(inputVaue, pageNumber) {
     if (films.length < 20) {
       buttonNext.classList.add('hide');
     }
+    if (pageNumber === 1) {
+      buttonPrev.classList.add('hide');
+    }
     if (films.length === 0) {
       errorMessage.classList.remove('hide');
       buttonNext.classList.add('hide');
       buttonPrev.classList.add('hide');
       onNavigete('/search?error');
     }
+    if (films.length > 20) {
+      buttonNext.classList.remove('hide');
+    }
     films.map(film => {
+      buttonNext.classList.remove('hide');
+      buttonPrev.classList.remove('hide');
       renderFilms.push(film);
       createCardFunc(film);
       fragment.append(createCardFunc(film));
@@ -77,6 +85,9 @@ function searchFilms(inputVaue, pageNumber) {
 function plaginationNavigation(e) {
   if (e.target === e.currentTarget) {
     return;
+  }
+  if (pageNumber === 1) {
+    buttonPrev.classList.add('hide');
   }
   if (e.target.name === 'Next') {
     buttonPrev.classList.remove('hide');
