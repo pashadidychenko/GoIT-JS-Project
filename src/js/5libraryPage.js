@@ -16,17 +16,10 @@ function addHtml(fragmentHtml, rootHtml) {
   rootHtml.append(fragment);
 }
 const list = document.querySelector('#films-gallery-lybrary');
-refs.watchedButton.addEventListener('click', watchedBtnHandler);
-refs.queueButton.addEventListener('click', queueBtnHandler);
+refs.watchedButton.addEventListener('click', drawWatchedFilmList);
+refs.queueButton.addEventListener('click', drawQueueFilmList);
 
-function queueBtnHandler() {
-  drawQueueFilmList();
-}
-
-function watchedBtnHandler() {
-  drawWatchedFilmList();
-}
-
+// Greal library list
 function createLibraryCardFunc({
   backdrop_path,
   title,
@@ -62,18 +55,17 @@ function createLibraryCardFunc({
   return a;
 }
 
+// Show Queue
 function drawQueueFilmList() {
   addHtml('', list);
   refs.filmListLybrary.classList.remove('hide');
   const watchedButton = document.querySelector('#watched-button');
   const queueButton = document.querySelector('#queue-button');
   const myLibHome = document.querySelector('#mylib-home');
-  // const myLibListItem = document.querySelector('.home__list-item');
 
   watchedButton.classList.remove('active-nav-button');
   queueButton.classList.add('active-nav-button');
   const fromLocalStorage = JSON.parse(localStorage.getItem('filmsQueue'));
-  console.log(fromLocalStorage);
 
   if (fromLocalStorage === null || fromLocalStorage.length === 0) {
     return myLibHome.insertAdjacentHTML(
@@ -93,18 +85,17 @@ function drawQueueFilmList() {
   }
 }
 
+// Show Watched
 function drawWatchedFilmList() {
   addHtml('', list);
   refs.filmListLybrary.classList.remove('hide');
   const watchedButton = document.querySelector('#watched-button');
   const queueButton = document.querySelector('#queue-button');
   const myLibHome = document.querySelector('#mylib-home');
-  // const myLibListItem = document.querySelector('.home__list-item');
 
   watchedButton.classList.remove('active-nav-button');
   queueButton.classList.add('active-nav-button');
   const fromLocalStorage = JSON.parse(localStorage.getItem('filmsWatched'));
-  console.log(fromLocalStorage);
 
   if (fromLocalStorage === null || fromLocalStorage.length === 0) {
     return myLibHome.insertAdjacentHTML(
@@ -123,56 +114,3 @@ function drawWatchedFilmList() {
     myLibHome.insertAdjacentHTML('beforeend', markup);
   }
 }
-
-// function renderWatchedFilms() {
-//   refs.watchedButton.addEventListener('click', drawWatchedFilmList());
-// }
-
-// function swichmyListLibrary() {
-//   console.log(`swichmyListLibrary`);
-
-//   // const watchedButton = document.querySelector(
-//   //   'button[data-action="queue-button"]',
-//   // );
-//   const watchedButton = document.querySelector('#watched-button');
-//   // watchedButton.addEventListener('click', watchedBtnHandler);
-
-//   // const queueButton = document.querySelector(
-//   //   'button[data-action="queue-button"]',
-//   // );
-//   const queueButton = document.querySelector('#queue-button');
-//   // queueButton.addEventListener('click', queueBtnHandler);
-// }
-
-// export default function () {
-//   swichmyListLibrary();
-//   queueBtnHandler();
-// }
-// function drawWatchedFilmList() {
-//   const watchedButton = document.querySelector('#watched-button');
-//   const queueButton = document.querySelector('#queue-button');
-//   const myLibHome = document.querySelector('#mylib-home');
-//   const myLibListItem = document.querySelector('.home__list-item');
-
-//   queueButton.classList.remove('active-nav-button');
-//   watchedButton.classList.add('active-nav-button');
-//   const fromLocalStorage = JSON.parse(localStorage.getItem('filmsWatched'));
-//   if (fromLocalStorage === null || fromLocalStorage.length === 0) {
-//     return myLibHome.insertAdjacentHTML(
-//       'beforeend',
-//       `<div class="no-list"
-//             <h2 class="no-list__item">You do not have watched movies. Add them.</h2>
-//               </div>`,
-//     );
-//   } else {
-//     const markup = fromLocalStorage
-//       .map(result => {
-//         createLibraryCardFunc(result);
-//         fetchRequest.fetchMovieDetails(result).then(createLibraryCardFunc);
-//         console.log(result);
-//       })
-//       .join('');
-//     myLibHome.innerHTML = '';
-//     myLibHome.insertAdjacentHTML('beforeend', markup);
-//   }
-// }

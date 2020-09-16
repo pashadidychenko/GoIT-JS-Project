@@ -4,8 +4,6 @@ const API_KEY = '66f23c1b86846c1f0c0b18d0fb8daf16';
 const POPULAR_URL = 'https://api.themoviedb.org/3/movie/popular?api_key=';
 const SEARCH_URL = 'https://api.themoviedb.org/3/search/movie?api_key=';
 const DETAIL_URL = 'https://api.themoviedb.org/3/movie/';
-const GENRES_URL = 'https://api.themoviedb.org/3/genre/movie/list?api_key=';
-const genres = [];
 
 async function getMoviesData(movieId = null, inputVaue = null, pageNumber = 1) {
   if (movieId !== null) {
@@ -29,12 +27,4 @@ async function getMoviesData(movieId = null, inputVaue = null, pageNumber = 1) {
   return popularFilm;
 }
 
-async function fetchGenres() {
-  await Axios.get(
-    `${GENRES_URL}${API_KEY}&language=en-US&include_adult=false`,
-  ).then(response => response.data.genres.map(el => genres.push(el)));
-  return genres;
-}
-fetchGenres();
-
-export { getMoviesData, genres };
+export { getMoviesData };
