@@ -1,10 +1,6 @@
-// console.log('library Page');
-import { getMoviesData, genres } from './serviceApi.js';
-
 const refs = {
   myLibHome: document.querySelector('#mylib-home'),
   myLibListItem: document.querySelector('.home__list-item'),
-
   watchedButton: document.querySelector('#watched-button'),
   queueButton: document.querySelector('#queue-button'),
 };
