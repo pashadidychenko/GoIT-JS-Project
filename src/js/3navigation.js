@@ -1,4 +1,8 @@
-import { onNavigete, pageNumber } from './1initialHomePage';
+import {
+  onNavigete,
+  pageNumber,
+  renderPopularMovies,
+} from './1initialHomePage';
 
 const logoButton = document.querySelector('.text_logo');
 const homeButton = document.querySelector('.home');
@@ -22,6 +26,7 @@ function activeHomePage() {
   homeButton.classList.add('under_line');
   homeButton.classList.add('under_line');
   libraryBox.classList.add('hide');
+  renderPopularMovies(1);
   onNavigete(`/page=${pageNumber}`);
 }
 
