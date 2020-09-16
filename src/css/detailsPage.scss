@@ -1,5 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');  
+ #detailFilm {
+     font-family: "Roboto";
+     display: flex;
+     line-height: 1.75rem;
+     h3 {
+         margin: 10px 0px;
+     }
+     p {
+         margin: 0;
+         line-height: 1.25rem;
+     }
+     tr {
+         display: flex;
+         align-items: center;
+     }
+     tr td:nth-child(1n) {
+         flex-basis: 40%;
+     }
+ }
+ #detailFilmImage {
+    //  flex-basis: 50%;
+     width: 50%;
+     padding: 10px;
+ }
+ .details_info_wrapper {
+     box-sizing: border-box;
+     display: flex;
+     flex-basis: 50%;
+     flex-direction: column;
+    //  border: 1px solid;
+     margin: 10px;
+ }
+ table tr:nth-child(2n-1) {
+     background-color: #addad6;
+ }
+ table {
+     border-spacing: 0px;
+     color: #4f6462;
+     text-indent: 10px;
+     &::nth-child(2n) {
+        text-indent: 0;
+     }
+     td {
+         text-indent: 20px;
+     }
+     td:nth-child(2n) {
+        text-indent: 0px;
+     }
+ }
+ #aboutFilmText {
+     color: #938d9c;
+ }
+ #libraryButton {
+     margin-top: 25px
+ }
+ #watched, #queue {
+     background-color: rgba(0,0,0,0);
+     outline: 0;
+     border: 0;
+     margin-left: 20px;
+     position: relative;
+ }
+ #gender {
+     text-indent: 0px;
+ }
+ #watched::before {
+     display: table;
+     content: '';
+     width: 19px;
+     height: 14px;
+     position: absolute;
+     top: 5px;
+     left: -15px;
+     background-image: url('../images/add_2_watch.png');
+     background-repeat: no-repeat;
+ }
+ #queue::before {
+    display: table;
+    content: '';
+ }
 .detailFilm {
-    color: red;
     display: flex;
     line-height: 1.75rem;
     h3 {
@@ -50,6 +130,7 @@ table {
     border: 0;
     margin-left: 20px;
     position: relative;
+    cursor: pointer;
 }
 #watched::before {
     display: table;
@@ -70,9 +151,23 @@ table {
     position: absolute;
     top: 3px;
     left: -15px;
-    background-image: url("../images/add_2_queue.png");
+    background-image: url('../images/add_2_queue.png');
     background-repeat: no-repeat;
 }
+@media screen and (max-width:768px) {
+    #detailFilm {
+        flex-direction: column;
+    }
+    #detailFilmImage {
+        flex-basis: 100%;
+        width: 100%;
+    }
+    .detailFilmImage {
+        flex-basis: 100%;
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .detailFilm {
         flex-direction: column;
@@ -84,7 +179,5 @@ table {
     .details_info_wrapper {
         flex-basis: 100%;
     }
-    #watched,
-    #queue {
-    }
 }
+
