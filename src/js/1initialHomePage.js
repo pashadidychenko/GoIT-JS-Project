@@ -31,7 +31,7 @@ function renderPopularMovies(pageNumber) {
   onNavigete(`/page=${pageNumber}`);
 }
 renderPopularMovies(pageNumber);
-function createCardFunc({ backdrop_path, title, id }) {
+function createCardFunc({ backdrop_path, title, id, vote_average, release_date }) {
   const list = document.querySelector('#films-gallery');
   const a = document.createElement('a');
   const li = document.createElement('li');
@@ -39,8 +39,10 @@ function createCardFunc({ backdrop_path, title, id }) {
   li.className = 'card__container';
   const divTitle = document.createElement('div');
   divTitle.className = 'card__title';
-  divTitle.innerHTML = title;
-
+  divTitle.innerHTML = `(${release_date.substring(0,4)}) ${title}`;
+  const voteRate = document.createElement('div');
+  voteRate.classList.add('vote_rating')
+  voteRate.innerHTML = `★ ${vote_average}`;
   const img = document.createElement('img');
   img.className = 'card__img';
   let imgSrc;
@@ -53,7 +55,7 @@ function createCardFunc({ backdrop_path, title, id }) {
   img.setAttribute('src', imgSrc);
   img.setAttribute('alt', title);
 
-  li.append(divTitle, img);
+  li.append(divTitle, img, voteRate);
   a.append(li);
   list.append(a);
   return a;

@@ -6,6 +6,7 @@ const myLibButton = document.querySelector('.my_library');
 const homePage = document.querySelector('#homePage');
 const detailFilm = document.getElementById('detailFilm');
 const libraryBox = document.getElementById('libraryBox');
+const leftSide = document.querySelector('.left_side')
 
 function activeHomePage() {
   detailFilm.classList.add('hide');
@@ -29,3 +30,4 @@ function activeLibraryPage() {
 logoButton.addEventListener('click', activeHomePage);
 homeButton.addEventListener('click', activeHomePage);
 myLibButton.addEventListener('click', activeLibraryPage);
+leftSide.addEventListener('click', activeHomePage)
