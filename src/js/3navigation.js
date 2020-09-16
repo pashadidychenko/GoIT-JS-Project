@@ -6,9 +6,11 @@ const myLibButton = document.querySelector('.my_library');
 const homePage = document.querySelector('#homePage');
 const detailFilm = document.getElementById('detailFilm');
 const libraryBox = document.getElementById('libraryBox');
-const leftSide = document.querySelector('.left_side')
+const leftSide = document.querySelector('.left_side');
+const filmListLybrary = document.getElementById('filmListLybrary');
 
 function activeHomePage() {
+  filmListLybrary.classList.add('hide');
   detailFilm.classList.add('hide');
   homePage.classList.remove('hide');
   myLibButton.classList.remove('under_line');
@@ -19,6 +21,7 @@ function activeHomePage() {
 }
 
 function activeLibraryPage() {
+  filmListLybrary.classList.remove('hide');
   detailFilm.classList.add('hide');
   homePage.classList.add('hide');
   homeButton.classList.remove('under_line');
@@ -30,4 +33,4 @@ function activeLibraryPage() {
 logoButton.addEventListener('click', activeHomePage);
 homeButton.addEventListener('click', activeHomePage);
 myLibButton.addEventListener('click', activeLibraryPage);
-leftSide.addEventListener('click', activeHomePage)
+leftSide.addEventListener('click', activeHomePage);
